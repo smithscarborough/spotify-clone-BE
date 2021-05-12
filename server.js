@@ -3,6 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const lyricsFinder = require('lyrics-finder')
+const port = 'https://spotify-by-smith.herokuapp.com/'
 // Spotify w/ capital 's' to clarify that this is a class we are creating
 const SpotifyWebApi = require('spotify-web-api-node')
 const app = express();
@@ -68,4 +69,4 @@ app.get('/lyrics', async (req, res) => {
     res.json({ lyrics })
 })
 
-app.listen('https://spotify-by-smith.herokuapp.com/')
+app.listen(port)
