@@ -69,4 +69,4 @@ app.get('/lyrics', async (req, res) => {
     res.json({ lyrics })
 })
 
-app.listen(port)
+app.listen(3000)
