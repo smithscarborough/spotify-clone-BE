@@ -68,4 +68,4 @@ app.get('/lyrics', async (req, res) => {
     res.json({ lyrics })
 })
 
-app.listen('https://spotify-by-smith.herokuapp.com/')
+app.listen(3001)
