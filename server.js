@@ -69,6 +69,6 @@ app.get('/lyrics', async (req, res) => {
     res.json({ lyrics })
 })
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 80;
 
-app.listen(PORT) 
+app.listen(PORT)
