@@ -69,6 +69,6 @@ app.get('/lyrics', async (req, res) => {
     res.json({ lyrics })
 })
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 80 || 'https://spotify-by-smith.herokuapp.com/';
 
 app.listen(PORT)
