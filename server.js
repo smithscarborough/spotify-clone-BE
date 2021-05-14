@@ -71,8 +71,4 @@ app.get('/lyrics', async (req, res) => {
 
 const PORT = process.env.PORT || 8000;
 
-app.listen(PORT, function() {
-    var host = server.address().address;
-    var port = server.address().port;
-    console.log("server is listening at http://%s:%s", host, port);
-})
+app.listen(PORT) 
