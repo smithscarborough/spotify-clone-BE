@@ -41,34 +41,34 @@ app.post('/refresh', (req, res) => {
 app.post('/login', (req, res) => {
     res.send(200)
 
+    // the code that's returned as a query parameter to the redirect URI
+    const code = req.body.code
+    const spotifyApi = new SpotifyWebApi({
+        redirectUri: process.env.REDIRECT_URI,
+        clientId: process.env.CLIENT_ID,
+        // will add this to an .env file since hard-coding it in the server is not secure
+        clientSecret: process.env.CLIENT_SECRET,
+    })
 
-    // // the code that's returned as a query parameter to the redirect URI
-    // const code = req.body.code
-    // const spotifyApi = new SpotifyWebApi({
-    //     redirectUri: process.env.REDIRECT_URI,
-    //     clientId: process.env.CLIENT_ID,
-    //     // will add this to an .env file since hard-coding it in the server is not secure
-    //     clientSecret: process.env.CLIENT_SECRET,
-    // })
-
-    // spotifyApi
-    // .authorizationCodeGrant(code)
-    // .then(data => {
-    //     res.json({
-    //         accessToken: data.body.access_token,
-    //         refreshToken: data.body.refresh_token,
-    //         expiresIn: data.body.expires_in
-    //     })
-    //     // respond with error if for some reason there is a problem retrieving the access & refresh tokens
-    // })
-    // .catch(error => {
-    //     res.sendStatus(400)
-    // })
+    spotifyApi
+    .authorizationCodeGrant(code)
+    .then(data => {
+        res.json({
+            accessToken: data.body.access_token,
+            refreshToken: data.body.refresh_token,
+            expiresIn: data.body.expires_in
+        })
+        // respond with error if for some reason there is a problem retrieving the access & refresh tokens
+    })
+    .catch(error => {
+        res.sendStatus(400)
+    })
 })
 
-app.get('/', (req, res) => {
-    res.sendStatus(200)
-})
+// can delete this if you want
+// app.get('/', (req, res) => {
+//     res.sendStatus(200)
+// })
 
 app.get('/lyrics', async (req, res) => {
     const lyrics = 
