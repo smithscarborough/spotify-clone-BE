@@ -6,7 +6,6 @@ const lyricsFinder = require('lyrics-finder')
 // Spotify w/ capital 's' to clarify that this is a class we are creating
 const SpotifyWebApi = require('spotify-web-api-node')
 
-
 const app = express();
 // fixes the CORS errors we got
 app.use(cors())
@@ -70,4 +69,6 @@ app.get('/lyrics', async (req, res) => {
     res.json({ lyrics })
 })
 
-app.listen(5000 || 'https://spotify-by-smith.herokuapp.com/')
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT)
