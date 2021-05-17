@@ -33,7 +33,7 @@ app.post('/refresh', (req, res) => {
         })
     })
     .catch(error => {
-        console.log(error)
+        console.log(error) 
         res.sendStatus(400)
     })
 })
@@ -60,6 +60,8 @@ app.post('/login', (req, res) => {
         // respond with error if for some reason there is a problem retrieving the access & refresh tokens
     })
     .catch(error => {
+        console.log(JSON.stringify(error))
+        // console.log('heyyyyy')
         res.sendStatus(400)
     })
 })
