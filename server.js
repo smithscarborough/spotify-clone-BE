@@ -39,7 +39,6 @@ app.post('/refresh', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-    res.send(200)
 
     // the code that's returned as a query parameter to the redirect URI
     const code = req.body.code
