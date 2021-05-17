@@ -66,9 +66,9 @@ app.post('/login', (req, res) => {
 })
 
 // can delete this if you want
-// app.get('/', (req, res) => {
-//     res.sendStatus(200)
-// })
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+})
 
 app.get('/lyrics', async (req, res) => {
     const lyrics = 
